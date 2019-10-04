@@ -11,17 +11,17 @@
     text-align: center;
     font-family: 'Do Hyeon', sans-serif;
     margin : 0px;
-    padding-top : 50px; 
-       
-}   
+    padding-top : 50px;
 
-.container a{
+}
+
+.container h3{
     font-family: 'Do Hyeon', sans-serif;
     font-size : 30px;
     text-align: right;
     display: block;
     padding: 20px 230px 50px 0;
-    
+
 }
 
 #img{
@@ -45,7 +45,7 @@ height : 665px;
     position: absolute;
     top : 195px;
     left : 260px;
-              
+
 }
 
 #marker3{
@@ -88,10 +88,10 @@ height : 665px;
 #popup1:after {
 	border-color:rgba(255, 255, 255, 0);
     border-right-color: #fff;
-    
+
 	border-width: 10px;
 	margin-top: -10px;
-    
+
 }
 #popup1:before {
 	border-color: rgba(127, 127, 128, 0);
