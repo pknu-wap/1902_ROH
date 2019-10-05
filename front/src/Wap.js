@@ -16,10 +16,12 @@ class Wap extends Component{
 class Header extends Component{
     render(){
       return(
+        
         <div className = "container">
           <h1>부경대 화장실 찾기</h1>
           <h3>-대연캠퍼스-</h3>
         </div>
+       
         );
     }
 }
@@ -27,9 +29,14 @@ class Header extends Component{
 class Content extends Component{
     render(){
         return(
+          <div className = "body">
            <div id= "img">
-            <Toggle id="1"/>
+            <Toggle id="1" />
+            <Toggle id="2" />
+            <Toggle id="3" />
+            <Toggle id="4" />
             {/*Toggle 컴포넌트로 id 값을 주어서 마커와 Infort 하나씩 생성*/}
+           </div>
            </div>
          );
     }
@@ -42,6 +49,9 @@ class Marker extends Component{
           <p id = {this.props.id}>
           <img alt="marker" src = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"/>
           </p>
+          <p id = {this.props.id}>
+          <img alt = "marker"  src = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"/>
+          </p>
         </div>
       );
     }
@@ -50,7 +60,7 @@ class Marker extends Component{
 class Infort extends Component{
     render(){
         return(
-            <div id = {this.props.id} >
+            <div id = {this.props.id}>
             <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
             <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
             <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
