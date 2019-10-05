@@ -2,30 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Wap.css';
 
-class Wap extends Component{
-    render(){
-        return(
-            <div>
-              <Header />
-              <Content />
-            </div>
-        );
-    }
-}
-
-class Header extends Component{
-    render(){
-      return(
-        
-        <div className = "container">
-          <h1>부경대 화장실 찾기</h1>
-          <h3>-대연캠퍼스-</h3>
-        </div>
-       
-        );
-    }
-}
-
 class Content extends Component{
     render(){
         return(
@@ -99,4 +75,4 @@ class Toggle extends Component{
   }
 }
 
-export default Wap;
+export default Content;
