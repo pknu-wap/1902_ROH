@@ -1,0 +1,67 @@
+{"toilet_list" : [
+    {
+      "id" : 1,
+      "building" : "a12",
+      "floor" : 1,
+      "location" : "center",
+      "gender" : "woman",
+      "urinal" : -1,
+      "squat" : 0,
+      "toilet" : 6,
+      "disabled" : 1,
+      "shower" : 0,
+      "cleanliness" : 3,
+      "congestion" : 4,
+      "comment" : [
+        {
+          "c_id" : 1,
+          "name" : "IamFirst",
+          "password" : "first",
+          "cleanliness" : 5,
+          "congestion" : 2,
+          "description" : "It was Good!"
+        },
+        {
+          "c_id" : 2,
+          "name" : "IamSecond",
+          "password" : "second",
+          "cleanliness" : 4,
+          "congestion" : 3,
+          "description" : "Blah blah blah blah blah.... It's just OK...."
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "building" : "a12",
+      "floor" : 2,
+      "location" : "center",
+      "gender" : "woman",
+      "urinal" : -1,
+      "squat" : 0,
+      "toilet" : 8,
+      "disabled" : 0,
+      "shower" : 0,
+      "cleanliness" : 4,
+      "congestion" : 2,
+      "comment" : [
+        {
+          "c_id" : 1,
+          "name" : "Hello",
+          "password" : "first",
+          "cleanliness" : 5,
+          "congestion" : 2,
+          "description" : "It was Good!"
+        },
+        {
+          "c_id" : 2,
+          "name" : "World",
+          "password" : "second",
+          "cleanliness" : 3,
+          "congestion" : 4,
+          "description" : "Blah blah blah blah blah.... It's just OK...."
+        }
+      ]
+    }
+  ]
+}
