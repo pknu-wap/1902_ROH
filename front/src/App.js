@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Content from './Wap';
 import Detail from './Detail';
+import Loading from './loading';
 import './Wap.css';
 import './master.css';
 
@@ -37,7 +38,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="content">
-          {toilet_list? <Routed /> :  "loading"}
+          {toilet_list? <Routed /> :  <Loading />}
         </div>
       </div>
     );
