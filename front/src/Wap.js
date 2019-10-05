@@ -54,7 +54,7 @@ class Toggle extends Component{
   constructor(props){
     super(props);
     this.state={
-      hidden : false,
+      hidden : true,
       marker_id : "marker" + this.props.id,
       popup_id : "popup" + this.props.id
     }
