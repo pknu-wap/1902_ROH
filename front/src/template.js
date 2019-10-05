@@ -17,8 +17,8 @@ class Block extends Component{
       <div className="box">
       <span>이름 : {this.props.name}</span>
       <span hidden={true}>비밀번호  : {this.props.password}</span>
-      <p>청결도 : <StarsData rating={this.props.cleanliness}/></p>
-      <p>혼잡도 : <StarsData rating={this.props.congestion}/></p>
+      <div>청결도 : <StarsData rating={this.props.cleanliness}/></div>
+      <div>혼잡도 : <StarsData rating={this.props.congestion}/></div>
       <p>기타</p>
       <button>삭제</button>
       </div>
@@ -49,6 +49,7 @@ class Stars extends Component{
         }
         stars.push(
           <label
+            key={i}
             className={klass}
             onClick={this.rate.bind(this, i)}
             >
@@ -58,9 +59,9 @@ class Stars extends Component{
       }
 
       return (
-        <Fragment className="star-rating">
+        <div className="star-rating">
           {stars}
-        </Fragment>
+        </div>
       );
     }
 }
@@ -81,16 +82,16 @@ class StarsData  extends Component{
         klass += ' is-selected';
       }
       stars.push(
-        <label className={klass}>
+        <label key={i} className={klass}>
           ★
         </label>
       );
     }
 
     return (
-      <Fragment className="star-rating">
+      <div className="star-rating">
         {stars}
-      </Fragment>
+      </div>
     );
   }
 }

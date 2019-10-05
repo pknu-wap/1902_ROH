@@ -42,8 +42,8 @@ class Detail extends Component{
    );
  }
 _lists(){
-  const temp = this.state.user.reverse().map((user)=>(
-    <Block name={user.name} password={user.password} cleanliness={user.cleanliness} congestion={user.congestion}/>
+  const temp = this.state.user.reverse().map((user, index)=>(
+    <Block key={index} name={user.name} password={user.password} cleanliness={user.cleanliness} congestion={user.congestion}/>
   ));
   return (<div>{temp}</div>);
 }
@@ -72,14 +72,14 @@ class Write extends Component{
         <form>
           <p>
             <label> 이름 :
-              <input type="text" name="name" placeHolder="이름을 입력해주세요." value={this.state.name}/>
+              <input type="text" name="name" placeholder="이름을 입력해주세요." value={this.state.name}/>
             </label>
             <label> 비밀번호 :
-              <input type="text" name="pw" placeHolder="비밀번호를 입력해주세요" value={this.state.pw}/>
+              <input type="text" name="pw" placeholder="비밀번호를 입력해주세요" value={this.state.pw}/>
             </label>
           </p>
-          <p>청결도 : <Stars/></p>
-          <p>혼잡도 : <Stars/></p>
+          <div>청결도 : <Stars/></div>
+          <div>혼잡도 : <Stars/></div>
           <textarea></textarea>
           <p><input type="submit"/></p>
         </form>
