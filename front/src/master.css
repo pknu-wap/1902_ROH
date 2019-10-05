@@ -20,3 +20,11 @@
  .star-rating__star.is-selected {
     color: #FFD700;
   }
+  .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loading{
+    padding-top:5%;
+  }
