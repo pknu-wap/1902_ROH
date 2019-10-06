@@ -1,7 +1,7 @@
 {"toilet_list" : [
     {
       "id" : 1,
-      "building" : "a12",
+      "building" : "a15",
       "floor" : 1,
       "location" : "center",
       "gender" : "woman",
@@ -33,7 +33,7 @@
     },
     {
       "id" : 2,
-      "building" : "a12",
+      "building" : "a15",
       "floor" : 2,
       "location" : "center",
       "gender" : "woman",
@@ -62,6 +62,36 @@
           "description" : "Blah blah blah blah blah.... It's just OK...."
         }
       ]
+    }
+  ],
+  "building_coordinate" : [
+    {
+      "building" : "a15",
+      "marker_top": 125,
+      "marker_left" : 223,
+      "popup_top" : 90,
+      "popup_left" : 280
+    },
+    {
+      "building" : "a13",
+      "marker_top": 180,
+      "marker_left" : 260,
+      "popup_top" : 150,
+      "popup_left" : 80
+    },
+    {
+      "building" : "a12",
+      "marker_top": 220,
+      "marker_left" : 290,
+      "popup_top" : 190,
+      "popup_left" : 340
+    },
+    {
+      "building" : "a11",
+      "marker_top": 240,
+      "marker_left" : 295,
+      "popup_top" : 210,
+      "popup_left" : 120
     }
   ]
 }
