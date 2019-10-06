@@ -12,15 +12,17 @@ class App extends Component {
   componentDidMount(){
     setTimeout(()=>{
       this._getData();
-    },4000)
+    },1000)
   }
   _getData = async () =>{
-    const toilet_list = await this._callApi();
+    const toilet_list = await this._callApi("toilet_list");
+    const building_coordinate = await this._callApi("building_coordinate");
     this.setState({
-      toilet_list
+      toilet_list,
+      building_coordinate
     });
   }
-  _callApi = () =>{
+  _callApi = (lists) =>{
     return fetch('data.json', {
       headers : {
         'Content-Type': 'application/json',
@@ -28,17 +30,19 @@ class App extends Component {
        }
     })
       .then(res=>res.json())
-      .then(json=> json.toilet_list)
+      .then(json=> json[lists])
       .catch(err=>console.log(err))
   }
+  _renderBuilding = () => {
+    return <Routed bldgs={this.state.building_coordinate}/>;
+  }
   render(){
-    const {toilet_list} = this.state;
-    console.log(this.state.toilet_list);
+    const {building_coordinate} = this.state;
     return (
       <div className="App">
         <Header />
         <div className="content">
-          {toilet_list? <Routed /> :  <Loading />}
+        {building_coordinate ? this._renderBuilding() :  <Loading />}
         </div>
       </div>
     );
@@ -62,7 +66,7 @@ class Routed extends Component{
     return (
       <Router>
         <Route path="/detail" component={Detail}/>
-        <Route exact path="/" component={Content}/>
+        <Route exact path="/" component={() => <Content bldgs={this.props.bldgs} />}/>
       </Router>
     );
   }

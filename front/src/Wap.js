@@ -3,30 +3,36 @@ import { Link } from 'react-router-dom';
 import './Wap.css';
 
 class Content extends Component{
-    render(){
-        return(
-          <div className = "body">
-           <div id= "img">
-            <Toggle id="1" />
-            <Toggle id="2" />
-            <Toggle id="3" />
-            <Toggle id="4" />
-            {/*Toggle 컴포넌트로 id 값을 주어서 마커와 Infort 하나씩 생성*/}
-           </div>
-           </div>
-         );
-    }
+  render(){
+    const toggles = this.props.bldgs.map((bldg, index)=>{
+      return (
+        <Toggle key={index}
+        building={bldg.building}
+        marker_top={bldg.marker_top}
+        marker_left={bldg.marker_left}
+        popup_top={bldg.popup_top}
+        popup_left={bldg.popup_left}
+          />
+        )
+    })
+    return(
+      <div id= "img">
+        {toggles}
+      </div>
+    );
+  }
 }
 
 class Marker extends Component{
     render(){
+      const styles = {
+        top : this.props.marker_top + "px",
+        left : this.props.marker_left + "px",
+      };
       return(
-        <div className = "mark">
-          <p id = {this.props.id}>
+        <div className = "marker" style={styles}>
+          <p >
           <img alt="marker" src = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"/>
-          </p>
-          <p id = {this.props.id}>
-          <img alt = "marker"  src = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"/>
           </p>
         </div>
       );
@@ -35,29 +41,23 @@ class Marker extends Component{
 
 class Infort extends Component{
     render(){
+      const styles = {
+        top : this.props.popup_top + "px",
+        left : this.props.popup_left + "px"
+        };
         return(
-            <div id = {this.props.id}>
+          <div  >
+            <div className ="popup" id={this.props.popup_left > this.props.marker_left? "right" :"left"} style={styles}>
             <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
-            <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
-            <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
-            <Link to="/detail"><p>1층 중앙 남자 화장실</p></Link>
-            {/*
-              나중에
-              <Link to="/detail/화장실_id값"><p>{층}층 {위치} {남/여} 화장실</p></Link>
-            */}
             </div>
+          </div>
         );
     }
 }
 
 class Toggle extends Component{
-  constructor(props){
-    super(props);
-    this.state={
-      hidden : true,
-      marker_id : "marker" + this.props.id,
-      popup_id : "popup" + this.props.id
-    }
+  state={
+    hidden : true,
   }
   _clickHandler=()=>{
     this.setState({
@@ -65,11 +65,10 @@ class Toggle extends Component{
     });
   }
   render(){
-    console.log(this.state.marker_id, this.state.popup_id);
     return (
       <div onClick={this._clickHandler}>
-        <Marker id={this.state.marker_id}/>
-        { this.state.hidden ? null : <Infort id={this.state.popup_id}/>  }
+        <Marker marker_top={this.props.marker_top} marker_left={this.props.marker_left}/>
+        { this.state.hidden ? null : <Infort popup_top={this.props.popup_top} popup_left={this.props.popup_left}  marker_left={this.props.marker_left}/>  }
       </div>
     )
   }
