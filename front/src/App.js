@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Content from './Wap';
-import Detail from './Detail';
+import Map from './Wap';
+import ToiletInfo, { Reply } from './Detail';
 import Loading from './loading';
-import './Wap.css';
 import './master.css';
 
 class App extends Component {
@@ -12,7 +11,7 @@ class App extends Component {
   componentDidMount(){
     setTimeout(()=>{
       this._getData();
-    },1000)
+    },4000)
   }
   _getData = async () =>{
     const toilet_list = await this._callApi("toilet_list");
@@ -34,15 +33,16 @@ class App extends Component {
       .catch(err=>console.log(err))
   }
   _renderBuilding = () => {
-    return <Routed bldgs={this.state.building_coordinate}/>;
+    return <Routed toilets={this.state.toilet_list} bldgs={this.state.building_coordinate}/>;
   }
   render(){
+    const {toilet_list} = this.state;
     const {building_coordinate} = this.state;
     return (
       <div className="App">
         <Header />
-        <div className="content">
-        {building_coordinate ? this._renderBuilding() :  <Loading />}
+        <div className="section">
+        {toilet_list && building_coordinate ? this._renderBuilding() :  <div className="content"><Loading /></div>}
         </div>
       </div>
     );
@@ -53,7 +53,7 @@ class App extends Component {
 class Header extends Component{
     render(){
       return(
-        <div className = "container">
+        <div className = "title">
           <h1>부경대 화장실 찾기</h1>
           <h3>-대연캠퍼스-</h3>
         </div>
@@ -63,10 +63,12 @@ class Header extends Component{
 
 class Routed extends Component{
   render(){
+    const id = 1;
     return (
       <Router>
-        <Route path="/detail" component={Detail}/>
-        <Route exact path="/" component={() => <Content bldgs={this.props.bldgs} />}/>
+        <Route exact path="/" component={() => <div className="contents"><Map bldgs={this.props.bldgs} toilets={this.props.toilets}/></div>}/>
+        <Route path="/detail" component={() => <div className="info"><ToiletInfo toilets={this.props.toilets} id={id}/></div>}/>
+        <Route path="/detail" component={() => <div className="contents"><Reply toilets={this.props.toilets} id={id}/></div>}/>
       </Router>
     );
   }

@@ -3,10 +3,10 @@ import './master.css';
 
 function WCInfo({title, description}){
   return(
-    <Fragment>
+    <div className="info_title">
       <h1>{title}</h1>
-      <h3>{description}</h3>
-    </Fragment>
+      <div>{description}</div>
+    </div>
   );
 }
 
@@ -17,9 +17,11 @@ class Block extends Component{
       <div className="box">
       <span>이름 : {this.props.name}</span>
       <span hidden={true}>비밀번호  : {this.props.password}</span>
-      <div>청결도 : <StarsData rating={this.props.cleanliness}/></div>
-      <div>혼잡도 : <StarsData rating={this.props.congestion}/></div>
-      <p>기타</p>
+      <div>
+      <span>청결도 : <StarsData rating={this.props.cleanliness}/></span>
+      <span>혼잡도 : <StarsData rating={this.props.congestion}/></span>
+      </div>
+      <p>기타 : {this.props.description}</p>
       <button>삭제</button>
       </div>
       </Fragment>
@@ -59,9 +61,9 @@ class Stars extends Component{
       }
 
       return (
-        <div className="star-rating">
+        <span className="star-rating">
           {stars}
-        </div>
+        </span>
       );
     }
 }
@@ -89,9 +91,9 @@ class StarsData  extends Component{
     }
 
     return (
-      <div className="star-rating">
+      <span className="star-rating">
         {stars}
-      </div>
+      </span>
     );
   }
 }

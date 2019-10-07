@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Wap.css';
+import './master.css';
 
-class Content extends Component{
+class Map extends Component{
   render(){
     const toggles = this.props.bldgs.map((bldg, index)=>{
       return (
@@ -16,8 +16,10 @@ class Content extends Component{
         )
     })
     return(
-      <div id= "img">
-        {toggles}
+      <div className="map">
+        <div id= "img">
+          {toggles}
+        </div>
       </div>
     );
   }
@@ -74,4 +76,4 @@ class Toggle extends Component{
   }
 }
 
-export default Content;
+export default Map;
