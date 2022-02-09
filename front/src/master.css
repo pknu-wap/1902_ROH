@@ -1,55 +1,54 @@
-.loading{
-  padding-top:5%;
+.loading {
+  padding-top: 5%;
 }
 
-.App{
-    background:url("./bgImg.jpg");
-    height:100%;
+.App {
+  background: url("./bgImg.jpg");
+  height: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* header */
-.title{
-    position : relative;
-    top:-220px;
-    justify-content: left;
-    align-items: flex-start;
-    width :40%;
-    margin : 0 40px;
-    }
-.title h1{
-    font-size : 70px;
-    color : #2C2C2C;
-    text-align: center;
-    font-family: 'Do Hyeon', sans-serif;
-    margin : 0px;
-    padding-top : 50px;
-
+.title {
+  position: relative;
+  top: -220px;
+  justify-content: left;
+  align-items: flex-start;
+  width: 40%;
+  margin: 0 40px;
 }
-.title h3{
-    font-family: 'Do Hyeon', sans-serif;
-    font-size : 30px;
-    text-align: right;
-    display: block;
-    padding: 20px 230px 50px 0;
-    margin-bottom: 0px;
+.title h1 {
+  font-size: 70px;
+  color: #2c2c2c;
+  text-align: center;
+  font-family: "Do Hyeon", sans-serif;
+  margin: 0px;
+  padding-top: 50px;
 }
-.content{
-  width:1000px;
+.title h3 {
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 30px;
+  text-align: right;
+  display: block;
+  padding: 20px 230px 50px 0;
+  margin-bottom: 0px;
+}
+.content {
+  width: 1000px;
   align-items: center;
   justify-content: right;
   text-align: center;
 }
-.toilet_info{
-  position : relative;
+.toilet_info {
+  position: relative;
   top: 600px;
   left: -720px;
-  width :60%;
+  width: 60%;
   justify-content: left;
   align-items: flex-end;
-  background-color: #E6FFFF;
+  background-color: #e6ffff;
   box-shadow: 0px 0px 13px 0px #94f9fc;
   opacity: 0.9;
   padding: 0 30px 50px 50px;
@@ -57,76 +56,71 @@
   border-radius: 30px;
 }
 .repair {
-  margin-top:50px;
-  margin-left:420px;
-	background-color:#fafffb;
+  margin-top: 50px;
+  margin-left: 420px;
+  background-color: #fafffb;
   box-shadow: 0px 0px 13px 0px #ffffff;
-  border:1px solid white;
-	border-radius:21px;
-	display:inline-block;
-	cursor:pointer;
-	color:#030203;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:13px 13px;
-	text-decoration:none;
+  border: 1px solid white;
+  border-radius: 21px;
+  display: inline-block;
+  cursor: pointer;
+  color: #030203;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 13px 13px;
+  text-decoration: none;
 }
 .repair:hover {
-	background-color:#e8faff;
+  background-color: #e8faff;
 }
 .repair:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
-
-
-.map{
-  width:1000px;
+.map {
+  width: 1000px;
 }
-.reply{
-  width:1000px;
-
+.reply {
+  width: 1000px;
 }
-.info_title h1{
-  font-size : 40px;
-  color : #2C2C2C;
-  font-family: 'Do Hyeon', sans-serif;
-  margin : 0px;
-  padding-top : 50px;
+.info_title h1 {
+  font-size: 40px;
+  color: #2c2c2c;
+  font-family: "Do Hyeon", sans-serif;
+  margin: 0px;
+  padding-top: 50px;
 }
-.info_title div{
-  font-family: 'Do Hyeon', sans-serif;
-  font-size : 25px;
+.info_title div {
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 25px;
   letter-spacing: 3px;
   display: block;
   margin: 20px 0 0 30px;
   margin-bottom: 0px;
 }
 
-.box{
+.box {
   position: relative;
   top: -120px;
-  box-shadow: 1px 1px 5px 0px #1F51B7;
-  margin : 10px;
-  padding : 30px;
-  width : 80%;
-  background-color: #9DCFFF;
+  box-shadow: 1px 1px 5px 0px #1f51b7;
+  margin: 10px;
+  padding: 30px;
+  width: 80%;
+  background-color: #9dcfff;
   border-radius: 10px;
   opacity: 0.8;
 }
-#write{
-  background-color: #79AAFF;
+#write {
+  background-color: #79aaff;
   opacity: 0.9;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
-
-
 
 .star-rating__star {
   display: inline-block;
@@ -134,54 +128,85 @@ a{
   vertical-align: middle;
   line-height: 1;
   font-size: 1.5em;
-  color: #ABABAB;
-  transition: color .2s ease-out;
-  }
-  .star-rating__star:hover {
-    cursor: pointer;
-  }
+  color: #ababab;
+  transition: color 0.2s ease-out;
+}
+.star-rating__star:hover {
+  cursor: pointer;
+}
 
- .star-rating__star.is-selected {
-    color: #FFD700;
-  }
-
-
+.star-rating__star.is-selected {
+  color: #ffd700;
+}
 
 /* content */
-#img{
-    position : relative;
-    background:url( "http://www.pknu.ac.kr/campus/img/dy_cam_map_new.jpg");
-    width : 950px;
-    margin : 0 auto;
-    display : block;
-    height : 665px;
-    border: solid 2px #f0f0f0;
+#img {
+  position: relative;
+  background: url("./CampusMap.png") no-repeat;
+  background-position-y: center;
+  width: 950px;
+  margin: 0 auto;
+  display: block;
+  height: 665px;
 }
 
 /* marker */
-.marker{
-    position: absolute;
-    filter :grayscale(100%);
+.marker {
+  position: absolute;
+  filter: grayscale(100%);
 }
-.marker:hover{
-  filter :grayscale(0%);
+.marker:hover {
+  filter: grayscale(0%);
 }
 
 /* popup */
 .popup {
-	position: absolute;
-	background: #fff;
-    border: 2px solid #eba731;
-    width :inherit;
-    height : inherit;
-    border-radius: 5px;
-    padding : 10px 20px 0 15px;
+  position: absolute;
+  background: #fff;
+  border: 2px solid #eba731;
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+  padding: 10px 20px 0 15px;
 }
-#right:after {right: 100%; border-right-color: #fff;}
-#right:before {right: 100%; border-right-color: #eba731;}
-#left:after {left: 100%; border-left-color: #fff;}
-#left:before {left: 100%; border-left-color: #eba731;}
-.popup:after, .popup:before {top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none;}
-.popup:after {border-color:rgba(255, 255, 255, 0); border-width: 10px; margin-top: -10px;}
-.popup:before {border-color: rgba(89, 89, 89, 0); border-width: 13px; margin-top: -13px;}
-.popup p,a{font-size: 12px; margin-top:0px;}
+#right:after {
+  right: 100%;
+  border-right-color: #fff;
+}
+#right:before {
+  right: 100%;
+  border-right-color: #eba731;
+}
+#left:after {
+  left: 100%;
+  border-left-color: #fff;
+}
+#left:before {
+  left: 100%;
+  border-left-color: #eba731;
+}
+.popup:after,
+.popup:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.popup:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-width: 10px;
+  margin-top: -10px;
+}
+.popup:before {
+  border-color: rgba(89, 89, 89, 0);
+  border-width: 13px;
+  margin-top: -13px;
+}
+.popup p,
+a {
+  font-size: 12px;
+  margin-top: 0px;
+}

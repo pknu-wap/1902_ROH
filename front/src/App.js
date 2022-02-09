@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Map from './Wap';
 import ToiletInfo, { Reply } from './Detail';
 import Loading from './loading';
@@ -42,7 +42,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="section">
-        {toilet_list && building_coordinate ? this._renderBuilding() :  <div className="content"><Loading /></div>}
+          {toilet_list && building_coordinate ? this._renderBuilding() :  <div className="content"><Loading /></div>}
         </div>
       </div>
     );
@@ -66,11 +66,23 @@ class Routed extends Component{
     const id = 1;
     return (
       <Router>
-        <Route exact path="/" component={() => <div className="contents"><Map bldgs={this.props.bldgs} toilets={this.props.toilets}/></div>}/>
-        <Route path="/detail" component={() => <div className="info"><ToiletInfo toilets={this.props.toilets} id={id}/></div>}/>
-        <Route path="/detail" component={() => <div className="contents"><Reply toilets={this.props.toilets} id={id}/></div>}/>
+        <Routes>
+          <Route exact path="/" element={<div className="contents"><Map bldgs={this.props.bldgs} toilets={this.props.toilets}/></div>}/>
+          <Route path="/detail" element={<DetailComponent toilets={this.props.toilets} id={id}/>}/>
+        </Routes>
       </Router>
     );
+  }
+}
+
+class DetailComponent extends Component{
+  render(){
+    return (
+      <>
+      <div className="info"><ToiletInfo toilets={this.props.toilets} id={this.props.id}/></div>
+      <div className="contents"><Reply toilets={this.props.toilets} id={this.props.id}/></div>
+    </>
+    )
   }
 }
 export default App;
