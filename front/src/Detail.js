@@ -48,20 +48,31 @@ class Reply extends Component{
 
 //Write 할때 id값에 따라 저장
 class Write extends Component{
-  state={
+  state = {
     name:"",
     pw:""
   }
+  onNameChange(e){
+    this.setState({name: e.target.value});
+  }
+  onPwChange(e){
+    this.setState({pw: e.target.value});
+  }
+  onSubmitHandler(e){
+    e.preventDefault();
+    //modify json...?
+  }
+  
   render(){
     return(
       <div className="box" id="write">
-        <form>
+        <form onSubmit={this.onSubmitHandler.bind(this)}>
           <p>
             <label> 이름 :
-              <input type="text" name="name" placeholder="이름을 입력해주세요." value={this.state.name}/>
+              <input type="text" name="name" placeholder="이름을 입력해주세요." onChange={this.onNameChange.bind(this)} value={this.state.name}/>
             </label>
             <label> 비밀번호 :
-              <input type="text" name="pw" placeholder="비밀번호를 입력해주세요" value={this.state.pw}/>
+              <input type="text" name="pw" placeholder="비밀번호를 입력해주세요" onChange={this.onPwChange.bind(this)} value={this.state.pw}/>
             </label>
           </p>
           <div><span>청결도 : <Stars/></span>
